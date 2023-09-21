@@ -51,10 +51,9 @@ main{
 .first-div{
     display: flex;
     justify-content: center;
-   
     margin-top: 20px;
     align-items: center;
-    gap: 40px;
+    gap: 15px;
 
    
 }
@@ -68,7 +67,7 @@ main{
     justify-content: center;
     align-items: center;
     background-color: #5893D4;
-    padding: 17px;
+    padding: 13px;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -82,7 +81,7 @@ main{
 input{
     width: 100%;
     height: 100%;
-    padding: 22px;
+    padding: 15px;
     border-radius: 40px;
     border: none;
     outline: none;
