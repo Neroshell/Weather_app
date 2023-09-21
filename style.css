@@ -8,6 +8,7 @@ body {
     height: 100vh;
     font-family: 'Roboto', sans-serif;
     color: #CEDDEF;
+    position: fixed;
 }
 
 main{
@@ -16,6 +17,7 @@ main{
     gap: 25px;
     position: relative;
     z-index: 4;
+    padding: 10px;
 }
 .video-container {
     position: relative;
@@ -30,7 +32,7 @@ main{
     height: 100%;
     background-color: #070D59;
     z-index: 3;
-    opacity: 0.75;
+    opacity: 0.65;
 }
 
 
@@ -109,7 +111,7 @@ input{
 }
 
 .cloud-img-box{
-    width: 100px;
+    width: 70px;
    
 }
 
