@@ -10,9 +10,9 @@ const humidity = document.querySelector('.humid');
 const wind = document.querySelector('.wind');
 const pressure = document.querySelector('.pressure');
 const weatherImage = document.querySelector('.weather_img');
-const vidSource = document.querySelector('.video-source');
+const videoSource = document.querySelector('.video-source');
 const empty = document.querySelector('.empty');
-const videoBackground = document.querySelector('.video-background');
+
 
 function updateRealTimeDate() {
     const dateElement = document.querySelector('.date_time');
@@ -31,6 +31,7 @@ searchBox.addEventListener('click', fetchData);
 
 async function fetchData(){
     const city = inputBox.value;
+    const videoSource = document.querySelector('.video-source');
 
     if (city === '') {
         empty.innerHTML = 'Kindly search for a city';
@@ -61,23 +62,49 @@ async function fetchData(){
         wind.innerHTML = data.wind.speed + ' km/h';
 
         if (data.weather[0].main === 'Rain') {
+            videoSource.src = 'video/rainvid.mp4';
+            const videoBackground = document.getElementById('video-background');
+            videoBackground.load(); // Load the new video
+            videoBackground.play(); // Play the video
             weatherImage.src = 'images/rainy.png';
         } else if (data.weather[0].main === 'Snow') {
+            videoSource.src = 'video/snowfall.mp4';
+            const videoBackground = document.getElementById('video-background');
+            videoBackground.load(); 
+            videoBackground.play(); 
             weatherImage.src = 'images/snow.png';
         } else if (data.weather[0].main === 'Clouds') {
+            videoSource.src = 'video/moving_clouds.mp4';
+            const videoBackground = document.getElementById('video-background');
+            videoBackground.load(); 
+            videoBackground.play(); 
             weatherImage.src = 'images/cloudy.png';   
         } else if (data.weather[0].main === 'Clear') {
+            videoSource.src = 'video/default.mp4'; // Set the default video source
+            const videoBackground = document.getElementById('video-background');
+            videoBackground.load(); 
+            videoBackground.play(); 
             weatherImage.src = 'images/clear.png';
-        };
+        } else if (data.weather[0].main === 'Drizzle') {
+            videoSource.src = 'video/storm.mp4';
+            const videoBackground = document.getElementById('video-background');
+            videoBackground.load();
+            videoBackground.play(); 
+        } else {
+            // If none of the conditions match, set a default video source
+            videoSource.src = 'video/default.mp4';
+            const videoBackground = document.getElementById('video-background');
+            videoBackground.load(); 
+            videoBackground.play(); 
+        }
     }
     catch (err) {
         console.log(err.message)
         errorMessage.innerHTML = err.message;
     }
 
-    updateRealTimeDate()
-}
-
+    updateRealTimeDate();
+}        
 
 async function defaultData(){
     
@@ -105,12 +132,12 @@ async function defaultData(){
         wind.innerHTML = data.wind.speed + ' km/h';
 
         if (data.weather[0].main === 'Rain') {
+            videoSource.src = 'video\storm.mp4';
             weatherImage.src = 'images/rainy.png';
         } else if (data.weather[0].main === 'Snow') {
             weatherImage.src = 'images/snow.png';
         } else if (data.weather[0].main === 'Clouds') {
             weatherImage.src = 'images/cloudy.png'; 
-              
         } else if (data.weather[0].main === 'Clear') {
             weatherImage.src = 'images/clear.png';
 
