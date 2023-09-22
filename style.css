@@ -99,13 +99,14 @@ input{
 .temp-data{
     text-align: center;
     color: #CEDDEF;
+    
 }
 .humidity{
     text-align: center;
     background-color:#5893D4;
     color:whitesmoke;
     font-weight: bold;
-    width: 20%;
+    width: 40%;
     margin: 0 auto;
     padding: 10px;
     border-radius: 10px ;

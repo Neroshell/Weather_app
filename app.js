@@ -157,12 +157,10 @@ async function defaultData(){
             weatherImage.src = 'images/clear.png';
         } else if (data.weather[0].main === 'Drizzle') {
             videoSource.src = 'video/storm.mp4';
-            const videoBackground = document.getElementById('video-background');
             videoBackground.load();
             videoBackground.play(); 
         } else if (data.weather[0].main === 'Thunderstorm') {
-            videoSource.src = 'video/lightning.mp4video/storm.mp4';
-            const videoBackground = document.getElementById('video-background');
+            videoSource.src = 'video/lightning.mp4';
             videoBackground.load();
             videoBackground.play(); 
         }
