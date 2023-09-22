@@ -167,6 +167,11 @@ input{
         padding: 20px;
        
    }
+   .humidity{
+    width: 20%;
+   }
+
+   
 
    main{
     padding-top: 100px;
@@ -184,6 +189,10 @@ input{
         padding: 15px;
       
        
+   }
+
+   .humidity{
+    width: 20%;
    }
 
    .four-box{
